@@ -6,7 +6,7 @@ This project aims to improve the efficiency of IoT-based healthcare monitoring a
 
 ## Folder Structure
 
-```plaintext
+
 healthcare-monitoring/
 ├── data/
 │   ├── Blood.csv
@@ -91,12 +91,8 @@ Contributions are welcome! Please fork the repository and create a pull request 
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-```
+
 
 ## Folder Structure
 
 Here is the suggested folder structure for the project:
-
-```plaintext
-
-```
