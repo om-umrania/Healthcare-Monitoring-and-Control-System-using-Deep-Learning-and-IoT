@@ -6,7 +6,7 @@ This project aims to improve the efficiency of IoT-based healthcare monitoring a
 
 ## Folder Structure
 
-
+```plaintext
 healthcare-monitoring/
 ├── data/
 │   ├── Blood.csv
@@ -22,7 +22,7 @@ healthcare-monitoring/
 │   ├── model_training.ipynb
 ├── README.md
 └── requirements.txt
-
+```
 
 ## Files and Directories
 
