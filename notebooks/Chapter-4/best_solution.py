@@ -5,6 +5,9 @@ import random
 # Load the synthetic dataset
 df = pd.read_csv('synthetic_patient_data.csv')
 
+print(df.columns)
+
+
 # Define the parameters for the algorithm
 Ni = 100  # Number of iterations
 Ns = 50   # Number of solutions
@@ -21,7 +24,7 @@ def calculate_fitness_general(Int1, Int2, Ext1, Ext2):
     f2 = (Ext2 - Ext1) / Ext2
     return f1 * f2
 
-def calculate_fitness_covid(T1, T2, O1, O2, Text1, Text2):
+def calculate_fitness_covid(O1, O2, Text1, Text2):
     return ((T2 - T1) / T2) * ((O2 - O1) / O2) * ((Text2 - Text1) / Text2)
 
 def calculate_fitness_heart(ECG1, ECG2, BP1, BP2, Text1, Text2, H1, H2):
@@ -31,6 +34,7 @@ def calculate_fitness_diabetes(GL1, GL2, O1, O2, Text1, Text2, H1, H2):
     return ((GL2 - GL1) / GL2) * ((O2 - O1) / O2) * ((Text2 - Text1) / Text2) * ((H2 - H1) / H2)
 
 # Function to update patient location using the specified fitness calculation function
+
 def update_patient_location(solutions, df, Ni, Ns, Lmax, Lf, fitness_function, param_columns):
     for iteration in range(Ni):
         for i in range(Ns):
