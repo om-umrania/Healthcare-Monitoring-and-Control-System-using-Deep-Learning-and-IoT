@@ -34,6 +34,18 @@ df['normal_temperature'] = np.random.randint(0, 2, num_samples)
 df['non_sweaty'] = np.random.randint(0, 2, num_samples)
 df['itching_in_the_body'] = np.random.randint(0, 2, num_samples)
 
+# Add columns for the required variables
+df['T1'] = np.random.normal(98.6, 1.0, num_samples)
+df['T2'] = np.random.normal(99.0, 1.0, num_samples)
+df['O1'] = np.random.normal(95, 2, num_samples)
+df['O2'] = np.random.normal(94, 2, num_samples)
+df['Text1'] = np.random.normal(70, 5, num_samples)
+df['Text2'] = np.random.normal(72, 5, num_samples)
+df['H1'] = np.random.normal(50, 10, num_samples)
+df['H2'] = np.random.normal(55, 10, num_samples)
+df['GL1'] = np.random.normal(100, 10, num_samples)
+df['GL2'] = np.random.normal(105, 10, num_samples)
+
 # Save to CSV
 df.to_csv('synthetic_patient_data.csv', index=False)
 
