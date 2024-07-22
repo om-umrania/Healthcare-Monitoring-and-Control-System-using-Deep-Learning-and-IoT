@@ -6,6 +6,8 @@ import CryptographicFunctions as cf
 import heartpy as hp
 import matplotlib.pyplot as plt
 import Node
+import sys  # Add this import statement
+
 
 def run():
     data_vals, _ = hp.load_exampledata(0)
