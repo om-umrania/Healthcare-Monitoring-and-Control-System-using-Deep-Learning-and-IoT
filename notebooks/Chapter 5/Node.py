@@ -10,6 +10,11 @@ class Node:
         self.location = location
         self.blockchain = []
 
+        self.packets_sent = 0
+        self.packets_received = 0
+
+
+
     def modifyTrust(self, newTrust):
         self.trust += newTrust
         if self.trust <= 0:

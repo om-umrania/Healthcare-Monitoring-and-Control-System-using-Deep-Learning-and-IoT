@@ -78,6 +78,13 @@ def run():
                     
                     dummyNode.addBlock(block)
                 
+                    nodes[src].packets_sent += 1
+                    nodes[dest % maxNodes].packets_received += 1
+
+
+
+
+
                 t2 = time.time()
                 delay = t2 - t1
                 
@@ -103,12 +110,26 @@ def run():
     eNeeded = initE - finalE
     print(f"Energy needed: {eNeeded:.04f} mJ")
 
+    # Calculate PDR
+
+    total_packets_sent = sum(node.packets_sent for node in nodes)
+    total_packets_received = sum(node.packets_received for node in nodes)
+    pdr = (total_packets_received / total_packets_sent) if total_packets_sent > 0 else 0
+
+
+
+    print(f'Packet Delivery Ratio (PDR): {pdr:.04f}')
+
+
+
     # Return results for visualization
     return {
         'fitness': fitness,
         'final_energy': finalE,
         'energy_needed': eNeeded,
-        'fitness_threshold': fth
+        'fitness_threshold': fth,
+        'pdr': pdr,
+        'sidechains': sidechains
     }
 
 if __name__ == "__main__":

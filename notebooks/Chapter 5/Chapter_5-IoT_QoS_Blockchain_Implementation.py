@@ -32,6 +32,15 @@ def main():
     print(f"Average Delay: {consensus_results['avg_delay']:.4f} s")
     print(f"Total Delay: {consensus_results['total_delay']:.4f} s")
 
+    avg_delay = consensus_results['avg_delay']
+    total_delay = consensus_results['total_delay']
+    pdr = consensus_results['pdr']
+    blockchain = consensus_results['blockchain']
+
+    print(f"Packet Delivery Ratio (PDR): {pdr:.4f}")
+    print(f"Number of Blocks: {len(blockchain)}")
+
+
     # Visualization
     print("Visualizing results...")
 
@@ -60,6 +69,15 @@ def main():
     plt.xlabel('Blockchain Length')
     plt.ylabel('Frequency')
     plt.show()
+
+    # Histogram of blockchain lengths for
+    plt.figure(figsize=(12, 6))
+    delays = [block['ts'] for block in blockchain]
+    plt.plot(delays, label='Block Timestamps')
+    plt.xlabel('Block Index')
+    plt.ylabel('Timestamp')
+    plt.title('Block Mining Timestamps')
+    plt.legend()
 
 if __name__ == "__main__":
     main()
