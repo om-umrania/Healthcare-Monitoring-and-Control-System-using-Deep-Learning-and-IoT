@@ -28,7 +28,7 @@ def main():
     print(f"Total Delay: {qos_results['total_delay']:.4f} s")
     
     # Display QoS Optimized Blockchain Consensus results
-    print("\Enhanced_PoS_Consensus Results:")
+    print("\nEnhanced_PoS_Consensus Results:")
     print(f"Average Delay: {consensus_results['avg_delay']:.4f} s")
     print(f"Total Delay: {consensus_results['total_delay']:.4f} s")
 
